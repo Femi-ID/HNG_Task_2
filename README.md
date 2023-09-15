@@ -32,4 +32,4 @@ The API has **3** endpoints which you can check out in the views.py:
 2. **/api:** The create user view profile
 3. **/api/<user_id>:** The view for user profile detail.
 
-**Check the [documentation](https://github.com/Femi-ID/HNG_Internship_task_2/blob/master/DOCUMENTATION.md) for more information.**
+**Check the [documentation](https://github.com/Femi-ID/HNG_task_2/blob/master/DOCUMENTATION.md) for more information.**
