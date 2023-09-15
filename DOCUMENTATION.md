@@ -5,7 +5,7 @@
 #### The API has **3** endpoints you can check out in the views.py:
 1. **/:**  The home view to see all user profiles. HTTP Method: **GET**
 
-2. **/api:**  To create a new profile. 
+2. **/api:**  To create/update/delete a person profile. 
 
 - HTTP Methods: **['GET', 'POST', 'PUT', 'PATCH', 'DELETE']**
 
@@ -16,8 +16,7 @@ Request Format:
 - Request Body & Content-Type: application/json
 ```json
 {
-  "first_name": "John",
-  "last_name": "Doe (optional)",
+  "name": "Doe",
   "bio": "Today's a good day! (optional)"
   }
 ```
@@ -26,7 +25,7 @@ Request Format:
 - Response Body: application/json 
 ```json
 { 
-    "id": 1, "first_name": "John",
+    "id": 1, "name": "John",
     "last_name": "Doe",
     "bio": "optional",
     "created": "date created"
@@ -35,7 +34,7 @@ Request Format:
 
 ### Retrieve Person Profile by FirstName
 * HTTP Method: GET
-* Query Parameter: - **first_name (string)**: The name of the user to retrieve.
+* Query Parameter: - **name (string)**: The name of the user to retrieve.
 
 * Response Format:
 - HTTP Status: 200 OK
@@ -45,7 +44,7 @@ Request Format:
 ### Update Person Profile by FirstName
 * Description: Update user details by name.
 * HTTP Method: **[PUT, PATCH]**
-* Query Parameter: -**first_name (string)**: The name of the user to update.
+* Query Parameter: -**name (string)**: The name of the user to update.
 * Request Format: - Request Body & Content-Type: application/json
 
 * Response Format:
@@ -57,7 +56,7 @@ Request Format:
 * Description: Delete a user by name.
 * Endpoint: /api
 * HTTP Method: **DELETE**
-* Query Parameter: -**first_name (string)**: The name of the user to delete.
+* Query Parameter: -**name (string)**: The name of the user to delete.
 * Response Format: - HTTP Status: 204 No Content
 
 
