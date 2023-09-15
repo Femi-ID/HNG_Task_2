@@ -32,10 +32,12 @@ def crud_person_profile_by_firstname(request):
                 person = Person.objects.get(name=name)
             except Person.DoesNotExist:
                 return Response({"error": "The name provided does not exist!"}, status=status.HTTP_404_NOT_FOUND)
-            serializer = PersonSerializer(person)
+            serializer = PersonSerializer(instance=person)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
-        return Response(status=status.HTTP_200_OK)
+        persons = Person.objects.all()
+        serializer = PersonSerializer(instance=persons, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
     """Create new person profile."""
@@ -101,7 +103,7 @@ def read_edit_delete_person_profile_by_id(request, user_id):
 
     if request.method == "GET":
         serializer = PersonSerializer(person)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     if request.method == "DELETE":
         try:

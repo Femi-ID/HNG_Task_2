@@ -25,8 +25,7 @@ Request Format:
 - Response Body: application/json 
 ```json
 { 
-    "id": 1, "name": "John",
-    "last_name": "Doe",
+    "id": 1, "name": "Doe",
     "bio": "optional",
     "created": "date created"
 }
@@ -111,3 +110,4 @@ No form of authentication. The application only emphasis on basic **CRUD** funct
 
 **Check the [README](https://github.com/Femi-ID/HNG_Internship_task_2) for more info on running the server locally.**
 #### _And your good to go!_
+
